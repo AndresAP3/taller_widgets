@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kPokeRed = Color(0xFFCC0000);
+
 class PokemonData {
   final int id;
   final String nombre;
@@ -50,6 +52,24 @@ class PokemonDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('fase 1 ok')));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: kPokeRed,
+        title: Text(
+          pokemon.nombreCapitalizado,
+          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 2),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.favorite_border, color: Colors.white),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Center(
+        child: Text('fase 2 ok', style: TextStyle(color: Colors.white54)),
+      ),
+    );
   }
 }
